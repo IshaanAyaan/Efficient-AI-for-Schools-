@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Config with API keys
+config.js
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

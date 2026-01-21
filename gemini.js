@@ -3,7 +3,9 @@
 // Using Gemini 2.0 Flash Lite (smallest model)
 // ========================================
 
-const API_KEY = 'REDACTED_API_KEY';
+import CONFIG from './config.js';
+
+const API_KEY = CONFIG.GEMINI_API_KEY;
 const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent';
 
 // ========================================
