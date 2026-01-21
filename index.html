@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EfficientGov AI for Schools | Smarter Government Starts Local</title>
+    <meta name="description"
+        content="AI-powered school budget analyzer that brings transparency and efficiency insights to education spending.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1>EfficientGov AI</h1>
+                    <span class="tagline">for Schools</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Smarter Government Starts Local</h2>
+            <p>AI-powered budget analysis that makes school spending transparent and understandable for every citizen.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Application -->
+    <main class="main-app">
+        <!-- Input Section -->
+        <section class="input-section">
+            <div class="card input-card">
+                <h3>Analyze Your School Budget</h3>
+                <p class="input-description">Paste your school district's budget text below, or use our sample budget to
+                    see how it works.</p>
+
+                <textarea id="budget-input" placeholder="Paste your school budget document text here...
+
+Example format:
+Total Budget: $45,000,000
+Instruction: $26,100,000 (58%)
+Administration: $6,750,000 (15%)
+Facilities & Maintenance: $5,400,000 (12%)
+Student Services: $3,600,000 (8%)
+Transportation: $2,250,000 (5%)
+Technology: $900,000 (2%)"></textarea>
+
+                <div class="button-row">
+                    <button id="analyze-btn" class="btn btn-primary">
+                        Analyze Budget
+                    </button>
+                    <button id="sample-btn" class="btn btn-secondary">
+                        Load Sample Budget
+                    </button>
+                </div>
+
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing budget with AI...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="results-section hidden">
+            <!-- Efficiency Score Card -->
+            <div class="card score-card">
+                <h3>Efficiency Score</h3>
+                <div class="score-display">
+                    <div class="score-circle" id="score-circle">
+                        <span class="score-number" id="score-number">--</span>
+                        <span class="score-label">/ 100</span>
+                    </div>
+                    <div class="score-status" id="score-status">
+                        <span class="status-badge" id="status-badge">Analyzing...</span>
+                        <p class="status-description" id="status-description"></p>
+                    </div>
+                </div>
+                <div class="score-breakdown" id="score-breakdown">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Spending Breakdown Card -->
+            <div class="card chart-card">
+                <h3>Spending Breakdown</h3>
+                <div class="chart-container">
+                    <canvas id="spending-chart"></canvas>
+                </div>
+                <div class="spending-legend" id="spending-legend">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+
+            <!-- AI Insights Card -->
+            <div class="card insights-card">
+                <h3>AI Analysis</h3>
+                <div class="insights-content" id="ai-insights">
+                    <!-- Filled by Gemini API -->
+                </div>
+            </div>
+
+            <!-- Red Flags Card -->
+            <div class="card flags-card">
+                <h3>Areas for Review</h3>
+                <div class="flags-content" id="flags-content">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="card chat-card">
+                <h3>Ask About This Budget</h3>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="chat-message assistant">
+                            <p>I've analyzed your school budget. Ask me anything about the spending, efficiency, or how
+                                it compares to typical schools!</p>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Ask a question about this budget...">
+                        <button id="chat-send" class="btn btn-primary">
+                            <span>Ask</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h4>Upload Budget</h4>
+                <p>Paste your school district's budget document text into our analyzer.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h4>AI Analysis</h4>
+                <p>Our Random Forest model and Gemini AI analyze spending patterns and efficiency.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h4>Get Insights</h4>
+                <p>Receive an efficiency score, visualizations, and plain-English explanations.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h4>Ask Questions</h4>
+                <p>Chat with AI to understand any aspect of your school's spending.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About EfficientGov AI</h2>
+            <p>EfficientGov AI is a student-built project for the Presidential AI Challenge 2026. We believe that every
+                taxpayer deserves to understand how their education dollars are spent.</p>
+            <p>By bringing AI-powered efficiency analysis to the local level, we're helping communities hold their
+                schools accountable - because <strong>smarter government starts local</strong>.</p>
+
+            <div class="tech-stack">
+                <h4>Powered By</h4>
+                <div class="tech-badges">
+                    <span class="tech-badge">Random Forest ML</span>
+                    <span class="tech-badge">Google Gemini AI</span>
+                    <span class="tech-badge">Chart.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>EfficientGov AI for Schools | Presidential AI Challenge 2026</p>
+        <p class="footer-tagline">"Smarter Government Starts Local"</p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>
